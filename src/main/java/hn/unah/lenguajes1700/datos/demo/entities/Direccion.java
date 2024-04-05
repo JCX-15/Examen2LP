@@ -22,6 +22,6 @@ public class Direccion {
     private String ciudad;
     private String calle;
 
-    @OneToOne
+    @OneToOne(mappedBy = "direccion")
     private Cliente cliente;
 }
