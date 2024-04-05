@@ -1,5 +1,7 @@
 package hn.unah.lenguajes1700.datos.demo.entities;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -15,7 +17,7 @@ import lombok.Data;
 public class Direccion {
     @Id
     @GeneratedValue(strategy =  GenerationType.IDENTITY)
-    @Column(name = "idDireccion")
+    @Column(name = "iddireccion")
     private int idDireccion;
 
     private String departamento;
@@ -23,5 +25,6 @@ public class Direccion {
     private String calle;
 
     @OneToOne(mappedBy = "direccion")
+    @JsonIgnore
     private Cliente cliente;
 }

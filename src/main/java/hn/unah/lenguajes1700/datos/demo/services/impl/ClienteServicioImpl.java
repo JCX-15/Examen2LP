@@ -30,4 +30,27 @@ public class ClienteServicioImpl implements ClienteService {
         return  this.clienteRepository.findById(dni).get();
     }
 
+    @Override
+    public Cliente actualizarCliente(String dni, Cliente cliente) {
+        Cliente clienteActualizar = this.clienteRepository.findById(dni).get();
+        if(clienteActualizar != null){
+            clienteActualizar.setNombre(cliente.getNombre());
+            clienteActualizar.setApellido(cliente.getApellido());
+            clienteActualizar.setCorreo(cliente.getCorreo());
+            clienteActualizar.setTelefono(cliente.getTelefono());
+            this.clienteRepository.save(clienteActualizar);
+        }
+        return clienteActualizar;
+    }
+
+    @Override
+    public String eliminarCliente(String dni) {
+        Cliente clienteEliminar = this.clienteRepository.findById(dni).get();
+        if(clienteEliminar != null){
+            this.clienteRepository.delete(clienteEliminar);
+            return "Cliente eliminado";
+        }
+        return "Cliente no existe";
+    }
+    
 }

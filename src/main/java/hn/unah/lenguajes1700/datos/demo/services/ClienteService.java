@@ -8,4 +8,6 @@ public interface ClienteService {
     public List<Cliente> obtenerClientes();
     public Cliente crearCliente(Cliente cliente);
     public Cliente buscarClientePorDNI(String dni);
+    public Cliente actualizarCliente(String dni, Cliente cliente);
+    public String eliminarCliente(String dni);
 }

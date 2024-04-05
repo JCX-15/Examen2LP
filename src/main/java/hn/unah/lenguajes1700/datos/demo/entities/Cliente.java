@@ -20,6 +20,6 @@ public class Cliente {
     private String telefono;
 
     @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "idDireccion",referencedColumnName = "idDireccion")
+    @JoinColumn(name = "iddireccion",referencedColumnName = "iddireccion")
     private Direccion direccion;
 }
