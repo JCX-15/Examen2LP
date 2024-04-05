@@ -1,9 +1,12 @@
 package hn.unah.lenguajes1700.datos.demo.entities;
 
+import java.util.List;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -22,4 +25,7 @@ public class Cliente {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "iddireccion",referencedColumnName = "iddireccion")
     private Direccion direccion;
+
+    @OneToMany(mappedBy="cliente")
+    private List<ClienteProducto> clienteProducto;
 }

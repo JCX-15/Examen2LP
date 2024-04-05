@@ -10,4 +10,5 @@ public interface ClienteService {
     public Cliente buscarClientePorDNI(String dni);
     public Cliente actualizarCliente(String dni, Cliente cliente);
     public String eliminarCliente(String dni);
+    public Cliente agregarProducto(String dni, Long codigoTipoProducto);
 }

@@ -36,12 +36,16 @@ public class ClienteController {
     public Cliente buscarCliente(@RequestParam String dni) {
         return this.clienteServicioImpl.buscarClientePorDNI(dni);
     }
-    @PutMapping("cliente/actualizar/{id}")
+    @PutMapping("/cliente/actualizar/{id}")
     public Cliente actualizarCliente(@PathVariable String id, @RequestBody Cliente cliente) {
         return this.clienteServicioImpl.actualizarCliente(id, cliente);
     }
     @DeleteMapping("/cliente/eliminar/{id}")
     public String eliminarCliente( @PathVariable String id) {
         return this.clienteServicioImpl.eliminarCliente(id);
+    }
+    @PutMapping("/cliente/agregarProducto")
+    public Cliente agregarProducto(@PathVariable String dni, Long codigoTipoProducto) {
+        return this.clienteServicioImpl.agregarProducto(dni, codigoTipoProducto);
     }
 }
