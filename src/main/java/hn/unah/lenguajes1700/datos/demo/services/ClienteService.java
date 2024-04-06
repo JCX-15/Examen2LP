@@ -4,11 +4,9 @@ import java.util.List;
 
 import hn.unah.lenguajes1700.datos.demo.entities.Cliente;
 
-public interface ClienteService {
-    public List<Cliente> obtenerClientes();
+public interface ClienteService{
+
     public Cliente crearCliente(Cliente cliente);
-    public Cliente buscarClientePorDNI(String dni);
-    public Cliente actualizarCliente(String dni, Cliente cliente);
-    public String eliminarCliente(String dni);
-    public Cliente agregarProducto(String dni, Long codigoTipoProducto);
+    public List<Cliente> obtenerClientes();
+    public Cliente obtenerClientePorId(String dni);
 }
