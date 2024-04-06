@@ -22,7 +22,7 @@ public class ClienteController {
         return this.clienteServiceImpl.obtenerClientes();
     }
 
-    @GetMapping("/obtenerClientePorId")
+    @GetMapping("/obtenerClientePorId/{dni}")
     public Cliente obtenerClientePorId(@PathVariable String dni) {
         return this.clienteServiceImpl.obtenerClientePorId(dni);
     }

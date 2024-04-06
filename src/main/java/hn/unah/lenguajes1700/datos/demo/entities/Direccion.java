@@ -1,7 +1,5 @@
 package hn.unah.lenguajes1700.datos.demo.entities;
 
-import java.util.Optional;
-
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
